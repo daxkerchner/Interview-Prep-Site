@@ -1,0 +1,279 @@
+@import url('https://fonts.googleapis.com/css2?family=Marcellus:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+/* General properties for a nicely-styled site */
+
+html {
+  overflow-y: scroll;
+  scroll-behavior: smooth;
+}
+
+body, button {
+  font-family: 'Marcellus', sans-serif;
+  background-color: #143329;
+  margin: 0;
+  letter-spacing: .15rem;
+}
+
+input, textarea, button, .button {
+  font-family: 'Marcellus', sans-serif;
+  font-size: 1rem;
+  border: 2px solid #d0c0b0;
+  display: inline-block;
+}
+
+section, form {
+  padding: 1em;
+}
+
+/* Text formatting of different types */
+
+a {
+  text-decoration: none;
+}
+
+a[target="_blank"] {
+  text-decoration: underline;
+}
+
+a, a:visited {
+  color: #399B67;
+}
+
+a:hover, summary:hover {
+  color: black;
+}
+
+h1, h2 {
+  font-weight: normal;
+  text-transform: uppercase;
+}
+
+li {
+  margin-bottom: 1em;
+}
+
+strong {
+  font-weight: normal;
+  text-shadow: 1px 0px black;
+}
+
+strong a {
+  text-shadow: 1px 0px #a0a0ff;
+}
+
+a.button.highlight {
+  background-color: #399B67;
+  padding: 1rem;
+  color: white;
+}
+
+button:hover, a.button:hover {
+  background-color: black;
+}
+
+/* Header & navigation */
+
+header, main {
+  background-color: #fffef3;
+}
+
+header {
+  padding: 2em;
+}
+
+nav {
+  display: flex;
+  justify-content: flex-end;
+  border-top: 1px solid black;
+}
+
+nav a {
+  font-size: 1.25em;
+  padding: 1em;
+  border: 1px solid black;
+  border-top: 0px;
+}
+
+nav a.sel {
+  border: 0px;
+}
+
+nav>a, nav>a:visited, label {
+  color: #000000;
+}
+
+nav>a:hover {
+  color: #806040;
+}
+
+article {
+  display: grid;
+  grid-template-columns: 2fr;
+  width: 100%;
+  border-top: 1px solid black;
+}
+
+article section {
+  padding: 1em 17%;
+}
+
+article.abovefold {
+  grid-template-columns: 2fr 1fr 1fr;
+}
+
+article.abovefold section {
+  padding: 1em 12%;
+}
+
+article.abovefold .button {
+  text-transform: uppercase;
+}
+
+article div img {
+  width: 100%;
+  border-left: 1px solid black;
+  display: block;
+}
+
+@media (max-width: 1130px) {
+  article.abovefold {
+    grid-template-columns: 2fr 1fr;
+  }
+
+  article section>div:first-of-type {
+    display: none;
+  }
+}
+
+@media (max-width: 850px) {
+  article.abovefold {
+    grid-template-columns: 2fr;
+  }
+
+  article section>div {
+    display: none;
+  }
+
+  section {
+    padding: 1em !important;
+  }
+}
+
+h1 {
+  margin: 1rem 0 0;
+  font-size: 3em;
+  letter-spacing: 2px;
+}
+
+footer {
+  color: white;
+  padding: 2em;
+}
+
+footer a:hover {
+  color: white;
+}
+
+/* Some nice form styling, inspired by Material Design */
+
+form>* {
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+form>p {
+  font-style: italic;
+}
+
+input, textarea {
+  padding: 6px 12px;
+}
+
+form>div {
+  display: flex;
+  gap: 1em;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+form>div>input {
+  flex: 1;
+}
+
+form>label {
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+@media (max-width: 1130px) {
+  form>div>* {
+    width: 100%;
+  }
+}
+
+button, a.button {
+  border: none;
+  color: #ffffff;
+  margin: 1em 0 0 auto;
+  padding: .75em;
+  text-shadow: 1px 0px white;
+  cursor: pointer;
+  background-color: #399B67;
+}
+
+button:hover, button:focus, a.button:hover, a.button:focus {
+  background-color: #000000;
+}
+
+ /* Specific styling */
+
+section:has(.dax) {
+  padding: 1em 25%;
+  display: flex;
+  gap: 2em;
+  align-items: center;
+}
+
+img.dax {
+  width: 8em;
+  height: 8em;
+  border-radius: 4em;
+  background-color: white;
+  float: left;
+  flex-grow: 1;
+  border: 1px solid #d0c0b0;
+}
+
+.dax~p {
+  flex-grow: 1;
+}
+
+
+h1:has(~.testimonials) {
+  margin-left: auto;
+  margin-right: auto;
+  width: fit-content;
+}
+
+.testimonials {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4em;
+  text-align: center;
+  padding: 1em;
+  font-style: italic;
+}
+
+#book {
+  height: 800px;
+}
+
+iframe {
+  margin: 0; border: 0; filter: sepia(0.20) hue-rotate(-20deg);
+}
+
+form {
+  padding: 2em;
+}
