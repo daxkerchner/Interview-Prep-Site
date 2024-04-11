@@ -143,6 +143,8 @@ article div img {
   article section>div:first-of-type {
     display: none;
   }
+
+
 }
 
 @media (max-width: 850px) {
@@ -249,6 +251,17 @@ img.dax {
   flex-grow: 1;
 }
 
+#book {
+  height: 800px;
+}
+
+iframe {
+  margin: 0; border: 0; filter: sepia(0.20) hue-rotate(-20deg);
+}
+
+section:has(.testimonials) {
+  padding: 1em 2em;
+}
 
 h1:has(~.testimonials) {
   margin-left: auto;
@@ -259,19 +272,35 @@ h1:has(~.testimonials) {
 .testimonials {
   list-style: none;
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 4em;
-  text-align: center;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 3em 6em;
   padding: 1em;
   font-style: italic;
 }
 
-#book {
-  height: 800px;
+@media (max-width: 1130px) {
+  .testimonials {
+    grid-template-columns: 1fr 1fr;
+  }
 }
 
-iframe {
-  margin: 0; border: 0; filter: sepia(0.20) hue-rotate(-20deg);
+
+@media (max-width: 850px) {
+  .testimonials {
+    grid-template-columns: 1fr;
+  }
+}
+
+.testimonials br {
+  display: block;
+  content: " ";
+  margin: 1em 0;
+  line-height: 2rem;
+}
+
+.attr {
+  margin-top: 1rem;
+  text-align: right;
 }
 
 form {
