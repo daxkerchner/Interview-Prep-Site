@@ -121,6 +121,10 @@ article.abovefold {
   grid-template-columns: 2fr 1fr 1fr;
 }
 
+.class article.abovefold {
+  grid-template-columns: 1fr 1fr;
+}
+
 article.abovefold section {
   padding: 1em 12%;
 }
@@ -133,6 +137,13 @@ article div img {
   width: 100%;
   border-left: 1px solid black;
   display: block;
+}
+
+article>img {
+  width: 100%;
+  display: block;
+  padding: 1em 12%;
+  box-sizing: border-box;
 }
 
 @media (max-width: 1130px) {
@@ -150,6 +161,10 @@ article div img {
     grid-template-columns: 2fr;
   }
 
+  .class article.abovefold {
+    grid-template-columns: 1fr;
+  }
+
   article.abovefold>div {
     display: none;
   }
@@ -157,6 +172,10 @@ article div img {
   section {
     padding: 1em !important;
   }
+
+   article>img {
+     padding: 1em;
+   }
 }
 
 h1 {
