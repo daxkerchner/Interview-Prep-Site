@@ -43,7 +43,7 @@ a:hover, summary:hover {
   color: black;
 }
 
-h1, h2 {
+h1, h2, h3 {
   font-weight: normal;
   text-transform: uppercase;
 }
@@ -121,10 +121,6 @@ article.abovefold {
   grid-template-columns: 2fr 1fr 1fr;
 }
 
-.class article.abovefold {
-  grid-template-columns: 1fr 1fr;
-}
-
 article.abovefold section {
   padding: 1em 12%;
 }
@@ -136,7 +132,47 @@ article.abovefold .button {
 article div img {
   width: 100%;
   border-left: 1px solid black;
+  border-right: 1px solid black;
+  margin-left: -1px;
   display: block;
+}
+
+.class article.abovefold {
+  display: block;
+  position: relative;
+}
+
+.class .abovefold section {
+  position: relative;
+  z-index: 1;
+  padding-right: 37%;
+}
+
+.class .abovefold div {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  border-left: 0;
+  display: block;
+  mask-image: linear-gradient(to left, rgba(0,0,0,1), rgba(0,0,0,0));
+}
+
+.class .abovefold div img {
+  height: 100%;
+}
+
+article.details {
+  grid-template-columns: 1fr 2fr;
+}
+
+.center {
+  text-align: center;
+}
+
+article.details>div>img {
+  height: 100%;
+  object-fit: cover;
 }
 
 article>img {
@@ -151,22 +187,14 @@ article>img {
     grid-template-columns: 2fr 1fr;
   }
 
-  article.abovefold>div:first-of-type {
+  article.abovefold>div:not(:first-of-type) {
     display: none;
   }
 }
 
 @media (max-width: 850px) {
-  article.abovefold {
+  article.abovefold, .class article.abovefold, article.details {
     grid-template-columns: 2fr;
-  }
-
-  .class article.abovefold {
-    grid-template-columns: 1fr;
-  }
-
-  article.abovefold>div {
-    display: none;
   }
 
   section {
@@ -175,6 +203,10 @@ article>img {
 
    article>img {
      padding: 1em;
+   }
+
+   article>div {
+     display: none;
    }
 }
 
