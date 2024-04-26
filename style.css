@@ -65,6 +65,11 @@ a.button.highlight {
   background-color: #399B67;
   padding: 1rem;
   color: white;
+  font-size: 2rem;
+}
+
+strong.highlight {
+  color: #399B67;
 }
 
 button:hover, a.button:hover {
@@ -137,42 +142,67 @@ article div img {
   display: block;
 }
 
-.class article.abovefold {
+.heading {
+  text-align: center;
+}
+
+.heading+* {
+  border-top: none;
+}
+
+.class article.details {
   display: block;
   position: relative;
 }
 
-.class .abovefold section {
+.class .details section {
   position: relative;
   z-index: 1;
-  padding-right: 37%;
+  padding-left: 37%;
 }
 
-.class .abovefold div {
+.class .details div {
   position: absolute;
   top: 0;
-  right: 0;
+  left: 0;
   height: 100%;
   border-left: 0;
   display: block;
-  mask-image: linear-gradient(to left, rgba(0,0,0,1), rgba(0,0,0,0));
+  mask-image: linear-gradient(to right, rgba(0,0,0,1), rgba(0,0,0,0));
 }
 
-.class .abovefold div img {
+.class .details div img {
   height: 100%;
 }
 
-article.details {
-  grid-template-columns: 1fr 2fr;
+.class article.abovefold {
+  grid-template-columns: 3fr 2fr;
+  align-items:center;
 }
 
 .center {
   text-align: center;
 }
 
-article.details>div>img {
+article.abovefold>div>img {
   height: 100%;
   object-fit: cover;
+}
+
+.class article.abovefold>div {
+  grid-column-start: 2;
+}
+
+.class article.abovefold>div>img {
+  border: 1px solid #d0c0b0;
+  margin: 1em auto;
+  display: block;
+  width: 90%;
+  height: 50%;
+}
+
+.class article.abovefold>section {
+  grid-row-start: 1;
 }
 
 article>img {
@@ -193,8 +223,12 @@ article>img {
 }
 
 @media (max-width: 850px) {
-  article.abovefold, .class article.abovefold, article.details {
+  article.abovefold, .class article.details, .class article.abovefold {
     grid-template-columns: 2fr;
+  }
+
+  .class article.abovefold>div {
+    grid-column-start: 1;
   }
 
   section {
@@ -205,8 +239,16 @@ article>img {
      padding: 1em;
    }
 
-   article>div {
+   article>div, .class .details div  {
      display: none;
+   }
+
+   .class article.abovefold>div {
+     display: block;
+   }
+
+   .class article.abovefold>div>img {
+     width: 50%;
    }
 }
 
@@ -266,11 +308,13 @@ form>label {
 button, a.button {
   border: none;
   color: #ffffff;
-  margin: 1em 0 0 auto;
+  margin: 1em auto 0 auto;
   padding: .75em;
   text-shadow: 1px 0px white;
   cursor: pointer;
   background-color: #399B67;
+  display: block;
+  width: fit-content;
 }
 
 button:hover, button:focus, a.button:hover, a.button:focus {
